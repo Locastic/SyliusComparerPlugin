@@ -1,0 +1,14 @@
+sylius_resource:
+    resources:
+        locastic_sylius_comparer_plugin.comparer:
+            driver: doctrine/orm
+            classes:
+                model: Locastic\SyliusComparerPlugin\Entity\Comparer
+                interface: Locastic\SyliusComparerPlugin\Entity\ComparerInterface
+                repository: Locastic\SyliusComparerPlugin\Repository\ComparerRepository
+
+        locastic_sylius_comparer_plugin.comparer_product:
+            driver: doctrine/orm
+            classes:
+                model: Locastic\SyliusComparerPlugin\Entity\ComparerProduct
+                interface: Locastic\SyliusComparerPlugin\Entity\ComparerProductInterface

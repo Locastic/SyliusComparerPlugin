@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Locastic\SyliusComparerPlugin
+        psr4_prefix: Locastic\SyliusComparerPlugin
+        src_path: src/Entity

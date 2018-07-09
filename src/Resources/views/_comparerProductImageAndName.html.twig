@@ -1,0 +1,32 @@
+{% import '@SyliusUi/Macro/messages.html.twig' as messages %}
+{% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
+
+<div class="ui four column stackable grid comparer" >
+    <div class="column comparerBox"></div>
+    {% for product in products %}
+        <div class="column comparerBox">
+
+            {{ sonata_block_render_event('sylius.shop.product.index.before_box', {'product': product}) }}
+
+            <div id="{{ product }}"class="ui fluid card {{ product.id }}">
+                <a href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}" class="blurring dimmable image">
+                    <div class="ui dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div class="ui inverted button">{{ 'sylius.ui.view_more'|trans }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% include '@SyliusShop/Product/_mainImage.html.twig' with {'product': product} %}
+                </a>
+                <div class="content">
+                    <a href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}" class="header sylius-product-name">{{ product.name }}</a>
+                    {% if not product.variants.empty() %}
+                        <div class="sylius-product-price">{{ money.calculatePrice(product|sylius_resolve_variant) }}</div>
+                    {% endif %}
+                </div></div>
+            {% include 'LocasticSyliusComparerPlugin::_removeFromComparer.html.twig' %}
+            {% include '@SyliusShop/Product/Show/_inventory.html.twig' %}
+        </div>
+    {% endfor %}
+</div>

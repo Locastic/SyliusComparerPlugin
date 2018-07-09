@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+
+    <class name="Locastic\SyliusComparerPlugin\Request\RemoveProductFromComparerRequest">
+        <property name="productId">
+            <constraint name="NotBlank">
+                <option name="message">notBlankMessage</option>
+            </constraint>
+        </property>
+        <property name="comparer">
+            <constraint name="Locastic\SyliusComparerPlugin\Validator\Constraints\ComparerNotEmpty" />
+        </property>
+    </class>
+
+</constraint-mapping>

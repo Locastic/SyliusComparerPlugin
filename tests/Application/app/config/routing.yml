@@ -1,0 +1,13 @@
+sylius:
+    resource: "../../../../vendor/sylius/sylius/app/config/routing.yml"
+
+_profiler:
+    resource: "@WebProfilerBundle/Resources/config/routing/profiler.xml"
+    prefix: /_profiler
+
+# Put your own routes here
+locastic_sylius_comparer_plugin:
+    resource: "@LocasticSyliusComparerPlugin/Resources/config/routing.yml"
+    prefix: /{_locale}
+    requirements:
+        locale: _^[a-z]{2}(?:_[A-Z]{2})?$

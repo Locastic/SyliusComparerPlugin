@@ -1,0 +1,22 @@
+services:
+
+    locastic.sylius_comparer_plugin.validator.constraints.comparer_not_full_validator:
+        class: Locastic\SyliusComparerPlugin\Validator\Constraints\ComparerNotFullValidator
+        arguments:
+            - "@locastic_sylius_comparer_plugin.utils.comparer_capacity_checker"
+        tags:
+            - { name: validator.constraint_validator }
+
+    locastic.sylius_comparer_plugin.validator.constraints.product_not_in_comparer_validator:
+        class: Locastic\SyliusComparerPlugin\Validator\Constraints\ProductNotInComparerValidator
+        arguments:
+            - "@sylius.repository.product"
+        tags:
+            - { name: validator.constraint_validator }
+
+    locastic.sylius_comparer_plugin.validator.constraints.comparer_not_empty_validator:
+        class: Locastic\SyliusComparerPlugin\Validator\Constraints\ComparerNotEmptyValidator
+        arguments:
+            - "@locastic_sylius_comparer_plugin.utils.comparer_capacity_checker"
+        tags:
+            - { name: validator.constraint_validator }

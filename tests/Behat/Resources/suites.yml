@@ -1,0 +1,15 @@
+default:
+    suites:
+        ui_comparer:
+            contexts_services:
+                - sylius.behat.context.hook.doctrine_orm
+
+                - sylius.behat.context.transform.lexical
+
+                - sylius.behat.context.setup.channel
+                - sylius.behat.context.setup.product
+
+                - locastic_sylius_comparer_plugin.behat.context.setup.comparer
+                - locastic_sylius_comparer_plugin.behat.context.ui.comparer
+            filters:
+                tags: "@comparer && @ui"

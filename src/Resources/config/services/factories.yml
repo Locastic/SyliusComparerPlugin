@@ -1,0 +1,29 @@
+services:
+
+    locastic_sylius_comparer_plugin.custom_factory.comparer:
+        class: Locastic\SyliusComparerPlugin\Factory\ComparerFactory
+        decorates: locastic_sylius_comparer_plugin.factory.comparer
+        public: true
+        arguments:
+            - "@locastic_sylius_comparer_plugin.custom_factory.comparer.inner"
+            - "@locastic.sylius_comparer_plugin.utils.comparer_token"
+
+    locastic_sylius_comparer_plugin.custom_factory.comparer_product:
+        class: Locastic\SyliusComparerPlugin\Factory\ComparerProductFactory
+        decorates: locastic_sylius_comparer_plugin.factory.comparer_product
+        public: true
+        arguments:
+            - "@locastic_sylius_comparer_plugin.custom_factory.comparer_product.inner"
+
+    locastic.sylius_comparer_plugin.factory.comparer_cookie_factory:
+        class: Locastic\SyliusComparerPlugin\Factory\ComparerCookieFactory
+        arguments:
+            - "%comparer_cookie_token%"
+
+    locastic.sylius_comparer_plugin.factory.add_product_to_comparer_request_factory:
+        class: Locastic\SyliusComparerPlugin\Factory\AddProductToComparerRequestFactory
+        arguments: ['@locastic_sylius_comparer_plugin.context.comparer_context']
+
+    locastic.sylius_comparer_plugin.factory.remove_product_from_comparer_request_factory:
+        class: Locastic\SyliusComparerPlugin\Factory\RemoveProductFromComparerRequestFactory
+        arguments: ['@locastic_sylius_comparer_plugin.context.comparer_context']

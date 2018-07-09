@@ -1,0 +1,15 @@
+locastic_sylius_comparer_add_product:
+    path: /comparer/add
+    defaults:
+        _controller: locastic_sylius_comparer_plugin.controller.action.add_product_to_comparer
+
+locastic_sylius_comparer_remove_product:
+    path: /comparer/remove
+    defaults:
+        _controller: locastic_sylius_comparer_plugin.controller.action.remove_product_from_comparer
+
+locastic_sylius_comparer_list_products:
+    path: /comparer
+    defaults:
+        _controller: locastic_sylius_comparer_plugin.controller.action.list_comparer_products
+        name: ~

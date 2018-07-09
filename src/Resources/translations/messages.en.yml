@@ -1,0 +1,10 @@
+locastic_sylius_comparer_plugin:
+    ui:
+        comparer: Comparer
+        add_to_comparer: Add to comparer
+        added_to_comparer: Selected product has been successfully added to comparer.
+        comparer_full: Your comparer contains maximum amount of possible items.
+        empty_comparer_notice: Your comparer doesn't contain any items.
+        removed_from_comparer: Selected product has been successfully removed from comparer.
+        remove_from_comparer: Remove product from comparer.
+        comparer_contains_added_product: Comparer already contains added product.

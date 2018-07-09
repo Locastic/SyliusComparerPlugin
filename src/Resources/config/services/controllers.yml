@@ -1,0 +1,30 @@
+services:
+
+    locastic_sylius_comparer_plugin.controller.action.list_comparer_products:
+        class: Locastic\SyliusComparerPlugin\Controller\Action\ListComparerProductsAction
+        arguments:
+            - "@templating.engine.twig"
+            - "@doctrine.orm.default_entity_manager"
+            - "@locastic_sylius_comparer_plugin.context.comparer_context"
+            - "%comparer_cookie_token%"
+
+    locastic_sylius_comparer_plugin.controller.action.add_product_to_comparer:
+        class: Locastic\SyliusComparerPlugin\Controller\Action\AddProductToComparerAction
+        arguments:
+            - "@sylius.repository.product"
+            - "@locastic_sylius_comparer_plugin.repository.comparer"
+            - "@locastic.sylius_comparer_plugin.utils.message_redirect_helper"
+            - "@locastic_sylius_comparer_plugin.custom_factory.comparer_product"
+            - "@locastic_sylius_comparer_plugin.utils.comparer_capacity_checker"
+            - "@locastic.sylius_comparer_plugin.factory.comparer_cookie_factory"
+            - "@validator"
+            - "@locastic.sylius_comparer_plugin.factory.add_product_to_comparer_request_factory"
+
+    locastic_sylius_comparer_plugin.controller.action.remove_product_from_comparer:
+        class: Locastic\SyliusComparerPlugin\Controller\Action\RemoveProductFromComparerAction
+        arguments:
+            - "@locastic_sylius_comparer_plugin.repository.comparer_product"
+            - "@locastic.sylius_comparer_plugin.utils.message_redirect_helper"
+            - "@sylius.repository.product"
+            - "@validator"
+            - "@locastic.sylius_comparer_plugin.factory.remove_product_from_comparer_request_factory"

@@ -1,0 +1,44 @@
+services:
+    locastic_sylius_comparer_plugin.behat.context.setup.comparer:
+        class: Tests\Locastic\SyliusComparerPlugin\Behat\Context\Setup\ComparerContext
+        arguments:
+            - '@__symfony__.locastic_sylius_comparer_plugin.custom_factory.comparer'
+            - '@__symfony__.locastic_sylius_comparer_plugin.custom_factory.comparer_product'
+            - '@__symfony__.sylius.repository.product'
+            - '@__symfony__.sylius.manager.product_taxon'
+            - '@__symfony__.sylius.factory.taxon'
+            - '@__symfony__.sylius.factory.product_taxon'
+        tags:
+            - { name: fob.context_service }
+
+    locastic_sylius_comparer_plugin.behat.context.ui.comparer:
+        class: Tests\Locastic\SyliusComparerPlugin\Behat\Context\Ui\ComparerContext
+        arguments:
+            - "@__symfony__.sylius.repository.product"
+            - "@locastic_sylius_comparer_plugin.behat.page.shop.product_index"
+            - "@locastic_sylius_comparer_plugin.behat.page.shop.comparer"
+            - "@sylius.behat.notification_checker"
+            - "@locastic_sylius_comparer_plugin.behat.comparer_creator"
+        tags:
+            - { name: fob.context_service }
+
+    locastic_sylius_comparer_plugin.behat.comparer_creator:
+        class: Tests\Locastic\SyliusComparerPlugin\Behat\Service\ComparerCreator
+        arguments:
+            - "@__symfony__.locastic_sylius_comparer_plugin.custom_factory.comparer"
+            - "@__symfony__.locastic_sylius_comparer_plugin.custom_factory.comparer_product"
+            - "@__symfony__.sylius.repository.channel"
+            - "@__symfony__.sylius.factory.product"
+            - "@__symfony__.sylius.context.channel"
+            - "@__symfony__.sylius.repository.product"
+            - "%__symfony__.comparer_item_limit%"
+
+    locastic_sylius_comparer_plugin.behat.page.shop.comparer:
+        class: Tests\Locastic\SyliusComparerPlugin\Behat\Page\Shop\ComparerPage
+        parent: sylius.behat.symfony_page
+        public: false
+
+    locastic_sylius_comparer_plugin.behat.page.shop.product_index:
+        class: Tests\Locastic\SyliusComparerPlugin\Behat\Page\Shop\ProductHomePage
+        parent: sylius.behat.page.shop.product.index
+        public: false

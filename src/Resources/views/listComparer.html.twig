@@ -1,0 +1,16 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+
+    {% include 'LocasticSyliusComparerPlugin::_comparerHeader.html.twig' %}
+
+        {% if products.count > 0 %}
+            {% include 'LocasticSyliusComparerPlugin::_comparerProductImageAndName.html.twig' %}
+            {% include 'LocasticSyliusComparerPlugin::_comparerAttributesRow.html.twig' %}
+        {% else %}
+            {% include'LocasticSyliusComparerPlugin::_comparerEmpty.html.twig' %}
+        {% endif %}
+
+{% endblock %}
+
+

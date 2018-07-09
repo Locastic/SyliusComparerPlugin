@@ -1,0 +1,8 @@
+<div class="ui center aligned" style="align-self: center;">
+    <a href="{{ path('locastic_sylius_comparer_remove_product', {'productId': product.id}) }}"
+       class="locastic-remove-from-comparer ui icon labeled button red"
+       data-product-name="{{ product.name }}">
+        <i class="window close icon"></i>
+        {{ 'locastic_sylius_comparer_plugin.ui.remove_from_comparer'|trans }}
+    </a>
+</div>

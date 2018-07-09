@@ -1,0 +1,47 @@
+<div class="ui four column stackable grid comparer" >
+    <div class="column comparerBox">
+        <div class="ui fluid card" id="comparerAttributesColumn">
+            <div class="comparer-attributes">
+                <table id="sylius-product-attributes" class="ui definition table">
+                    <tbody>
+                    {% for attribute in attributes %}
+                        <tr><td>{{ attribute }}</td></tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    {% for product in products %}
+        <div class="column comparerBox {{ product.id }}">
+            <div class="comparer-attributes">
+                {{ sonata_block_render_event('sylius.shop.product.show.tab_attributes', {'product': product}) }}
+                <table id="sylius-product-attributes" class="ui definition table">
+                    <tbody>
+                    {% for attributeType in attributes %}
+                        {% set break, attribute = false, null %}
+                        {% for attr in product.getAttributes(app.request.locale, app.request.defaultLocale, sylius_base_locale)|sort_by('attribute.position') if break == false%}
+                            {% if attr.name == attributeType %}
+                                {% set break, attribute = true, attr %}
+                            {% endif %}
+                        {% endfor %}
+                        <tr>
+                            <td class="sylius-product-attribute-value">
+                                {% if break == true %}
+                                    {% include [('SyliusAttributeBundle:Types:'~attribute.attribute.type~'.html.twig'), 'SyliusAttributeBundle:Types:default.html.twig'] with {'attribute': attribute, 'locale': app.request.locale, 'fallbackLocale': app.request.defaultLocale} %}
+                                {% else %}
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>        </div>
+        {{ sonata_block_render_event('sylius.shop.product.index.after_box', {'product': product}) }}
+    {% endfor %}
+</div>

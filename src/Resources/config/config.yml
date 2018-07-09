@@ -1,0 +1,4 @@
+imports:
+    - { resource: "@LocasticSyliusComparerPlugin/Resources/config/parameters.yml" }
+    - { resource: "@LocasticSyliusComparerPlugin/Resources/config/services.yml" }
+    - { resource: "@LocasticSyliusComparerPlugin/Resources/config/resources.yml" }

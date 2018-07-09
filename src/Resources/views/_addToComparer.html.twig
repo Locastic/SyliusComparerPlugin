@@ -1,0 +1,9 @@
+<div class="compare-button" style="align-self: center;">
+    <a href="{{ path('locastic_sylius_comparer_add_product', {'productId': product.id}) }}"
+       class="locastic-add-to-comparer ui icon labeled button blue"
+       data-product-name="{{ product.name }}">
+        <i class="clone icon"></i>
+        {{ 'locastic_sylius_comparer_plugin.ui.add_to_comparer'|trans }}
+    </a>
+</div>
+

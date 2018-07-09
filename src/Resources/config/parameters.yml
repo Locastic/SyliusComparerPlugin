@@ -1,0 +1,3 @@
+parameters:
+    comparer_cookie_token: locastic_sylius_comparer
+    comparer_item_limit: 3
