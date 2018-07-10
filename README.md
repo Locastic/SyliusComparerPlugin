@@ -1,6 +1,6 @@
 <h1 align="center">
     <a href="http://www.locastic.com" target="_blank">
-        <img src="https://raw.githubusercontent.com/locastic/SyliusHTPayWayPlugin/master/SyliusHTPayWayPlugin.png" />
+        <img src="https://raw.githubusercontent.com/Locastic/SyliusComparerPlugin/master/LocasticSyliusComparePlugin.png" />
     </a>
     <br />
     <a href="https://packagist.org/packages/locastic/sylius-comparer-plugin" title="License" target="_blank">
