@@ -53,12 +53,13 @@ Inside Sylius shop add links to access comparer, and link to add shop product to
 ## Testing
 ```bash
 $ composer install
-$ cd tests/Application
 $ yarn install
 $ yarn run gulp
-$ bin/console assets:install web -e test
-$ bin/console doctrine:schema:create -e test
-$ bin/console server:run 127.0.0.1:8080 -d web -e test
+$ (cd tests/Application && bin/console assets:install web -e test)
+$ (cd tests/Application && bin/console doctrine:database:create)
+$ (cd tests/Application && bin/console doctrine:schema:create -e test)
+$ (cd tests/Application && bin/console sylius:fixtures:load)
+$ (cd tests/Application && bin/console server:run 127.0.0.1:8080 -d web -e test)
 $ open http://localhost:8080
 $ bin/behat
 $ bin/phpspec run
