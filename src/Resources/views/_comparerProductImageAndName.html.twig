@@ -8,7 +8,7 @@
 
             {{ sonata_block_render_event('sylius.shop.product.index.before_box', {'product': product}) }}
 
-            <div id="{{ product }}"class="ui fluid card {{ product.id }}">
+            <div id="{{ product }}" class="ui fluid card {{ product.id }}">
                 <a href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}" class="blurring dimmable image">
                     <div class="ui dimmer">
                         <div class="content">
@@ -26,7 +26,7 @@
                     {% endif %}
                 </div></div>
             {% include 'LocasticSyliusComparerPlugin::_removeFromComparer.html.twig' %}
-            {% include '@SyliusShop/Product/Show/_inventory.html.twig' %}
+            {% include 'LocasticSyliusComparerPlugin::_comparerInventory.html.twig' %}
         </div>
     {% endfor %}
 </div>

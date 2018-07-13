@@ -1,0 +1,3 @@
+.ui.definition.table tr td.definition, .ui.definition.table tr td:first-child:not(.ignored) {
+    height:43px;
+}
