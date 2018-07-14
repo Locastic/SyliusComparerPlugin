@@ -2,6 +2,7 @@ parameters:
     excludes_analyse:
         # Makes PHPStan crash
         - 'src/DependencyInjection/Configuration.php'
+        - 'src/Validator/Constraints/'
 
         # Test dependencies
         - 'tests/Application/app/**.php'
@@ -9,3 +10,4 @@ parameters:
 
     ignoreErrors:
         - '/Parameter #1 $configuration of method Symfony\Component\DependencyInjection\Extension\Extension::processConfiguration() expects Symfony\Component\Config\Definition\ConfigurationInterface, Symfony\Component\Config\Definition\ConfigurationInterface|null given./'
+        - '/Method Locastic\SyliusComparerPlugin\Factory\ComparerProductFactory::createNew () should return Locastic\SyliusComparerPlugin\Entity\ComparerProductInterface but returns object./'
