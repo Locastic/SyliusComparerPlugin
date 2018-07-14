@@ -27,6 +27,7 @@ before_install:
 install:
     - composer install --no-interaction --prefer-dist
     - (cd tests/Application && yarn install)
+    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle && npm i gulp)
 
 before_script:
     - (cd tests/Application && chmod +x bin/console)
