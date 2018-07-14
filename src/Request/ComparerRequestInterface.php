@@ -8,7 +8,7 @@ use Locastic\SyliusComparerPlugin\Entity\ComparerInterface;
 
 interface ComparerRequestInterface
 {
-    public function getComparer(): ?ComparerInterface;
+    public function getComparer(): ComparerInterface;
 
-    public function getProductId(): ?string;
+    public function getProductId(): string;
 }

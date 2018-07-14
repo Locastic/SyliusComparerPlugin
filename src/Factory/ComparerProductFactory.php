@@ -21,7 +21,10 @@ class ComparerProductFactory implements ComparerProductFactoryInterface
 
     public function createNew(): ComparerProductInterface
     {
-        return $this->comparerProductFactory->createNew();
+        /** @var ComparerProductInterface $comparerProduct */
+        $comparerProduct = $this->comparerProductFactory->createNew();
+
+        return $comparerProduct;
     }
 
     public function createForComparerAndProduct(ComparerInterface $comparer, ProductInterface $product): ComparerProductInterface

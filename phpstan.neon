@@ -2,6 +2,7 @@ parameters:
     excludes_analyse:
         # Makes PHPStan crash
         - 'src/DependencyInjection/Configuration.php'
+        - 'src/Validator/Constraints/'
 
         # Test dependencies
         - 'tests/Application/app/**.php'
