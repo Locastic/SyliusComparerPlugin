@@ -14,18 +14,18 @@ final class RemoveProductFromComparerRequest implements ComparerRequestInterface
     /** @var ComparerInterface */
     private $comparer;
 
-    public function __construct(?string $productId, ?ComparerInterface $comparer)
+    public function __construct(string $productId, ComparerInterface $comparer)
     {
         $this->productId = $productId;
         $this->comparer = $comparer;
     }
 
-    public function getComparer(): ?ComparerInterface
+    public function getComparer(): ComparerInterface
     {
         return $this->comparer;
     }
 
-    public function getProductId(): ?string
+    public function getProductId(): string
     {
         return $this->productId;
     }

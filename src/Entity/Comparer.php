@@ -14,7 +14,7 @@ class Comparer implements ComparerInterface
     /** @var int */
     private $id;
 
-    /** @var ComparerProductInterface|null */
+    /** @var ComparerProductInterface[] */
     private $comparerProducts;
 
     /** @var ShopUserInterface */
@@ -45,6 +45,7 @@ class Comparer implements ComparerInterface
 
     public function getProducts(): Collection
     {
+        /** @var ArrayCollection $products */
         $products = $this->comparerProducts->map(function (ComparerProductInterface $comparerProduct) {
             return $comparerProduct->getProduct();
         });
