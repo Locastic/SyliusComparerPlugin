@@ -14,7 +14,7 @@ class Comparer implements ComparerInterface
     /** @var int */
     private $id;
 
-    /** @var ComparerProductInterface[] */
+    /** @var ArrayCollection */
     private $comparerProducts;
 
     /** @var ShopUserInterface */
