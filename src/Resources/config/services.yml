@@ -38,7 +38,7 @@ services:
         arguments:
             - "@session.flash_bag"
             - "@router.default"
-            - "@translator.logging"
+            - "@sylius.theme.translation.translator"
 
 
 
