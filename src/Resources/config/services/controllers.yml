@@ -28,3 +28,9 @@ services:
             - "@sylius.repository.product"
             - "@validator"
             - "@locastic.sylius_comparer_plugin.factory.remove_product_from_comparer_request_factory"
+
+    locastic.sylius_comparer_plugin.controller.action.render_header_template_action:
+        class: Locastic\SyliusComparerPlugin\Controller\Action\RenderHeaderTemplateAction
+        arguments:
+            - '@templating.engine.twig'
+            - '@locastic_sylius_comparer_plugin.context.comparer_context'

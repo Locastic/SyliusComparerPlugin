@@ -8,9 +8,10 @@
         </div>
         <div class="right aligned column">
             <a href="{{ path('locastic_sylius_comparer_list_products')}}"
-               class="locastic-add-to-wishlist ui circular cart button">
+               class="locastic-add-to-wishlist ui circular button">
                 <i class="clone icon"></i>
                 {{ 'locastic_sylius_comparer_plugin.ui.comparer'|trans }}
+                {{ render(url('locastic_sylius_comparer_number_of_products')) }}
             </a>
             {{ render(url('sylius_shop_partial_cart_summary', {'template': '@SyliusShop/Cart/_widget.html.twig'})) }}
         </div>
