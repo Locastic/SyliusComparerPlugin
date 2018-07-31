@@ -1,12 +1,6 @@
 <?php
 
 declare(strict_types=1);
-/**
- * Created by PhpStorm.
- * User: Duje
- * Date: 28-May-18
- * Time: 4:22 PM
- */
 
 namespace Locastic\SyliusComparerPlugin\Entity;
 
