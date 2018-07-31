@@ -34,9 +34,8 @@ final class RenderHeaderTemplateAction
 
         return new Response(
             $this->templatingEngine->render('@LocasticSyliusComparerPlugin/_comparerItemCountHeader.html.twig', [
-                'comparer' => $comparer
+                'comparer' => $comparer,
             ]
          ));
     }
-
 }

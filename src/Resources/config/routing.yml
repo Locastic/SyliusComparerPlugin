@@ -12,7 +12,6 @@ locastic_sylius_comparer_list_products:
     path: /comparer
     defaults:
         _controller: locastic_sylius_comparer_plugin.controller.action.list_comparer_products
-        name: ~
 
 locastic_sylius_comparer_number_of_products:
     path: /comparer/number-of-products

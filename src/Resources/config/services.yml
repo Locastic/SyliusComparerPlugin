@@ -39,6 +39,3 @@ services:
             - "@session.flash_bag"
             - "@router.default"
             - "@sylius.theme.translation.translator"
-
-
-
