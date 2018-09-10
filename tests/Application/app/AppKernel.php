@@ -12,8 +12,7 @@ final class AppKernel extends Kernel
      */
     public function registerBundles(): array
     {
-
-        $bundles = array(
+        return array_merge(parent::registerBundles(), [
             new \Sylius\Bundle\AdminBundle\SyliusAdminBundle(),
             new \Sylius\Bundle\ShopBundle\SyliusShopBundle(),
 
@@ -21,13 +20,7 @@ final class AppKernel extends Kernel
             new \Sylius\Bundle\AdminApiBundle\SyliusAdminApiBundle(),
 
             new Locastic\SyliusComparerPlugin\LocasticSyliusComparerPlugin(),
-        );
-
-//        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-//            $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
-//        }
-
-        return array_merge(parent::registerBundles(), $bundles);
+        ]);
     }
 
     /**
@@ -35,6 +28,11 @@ final class AppKernel extends Kernel
      */
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
-        $loader->load($this->getRootDir() . '/config/config.yml');
+        $loader->load($this->getProjectDir() . '/app/config/config_' . $this->environment . '.yml');
+    }
+
+    public function getProjectDir(): string
+    {
+        return dirname(__DIR__);
     }
 }
