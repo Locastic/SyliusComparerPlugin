@@ -32,7 +32,7 @@ install:
     - composer install --no-interaction --prefer-dist
     - (cd tests/Application && yarn install)
     - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle && npm install gulp --save-dev)
-    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm install gulp --save-dev)
+    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm install gulp-cli --save-dev)
 
 before_script:
     - (cd tests/Application && chmod +x bin/console)
