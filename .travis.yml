@@ -25,7 +25,6 @@ before_install:
     - mkdir -p "${SYLIUS_CACHE_DIR}"
 
 install:
-    - composer require "symfony/symfony:3.4.*" --no-interaction --no-update
     - composer install --no-interaction --prefer-dist
     - (cd tests/Application && yarn install)
 
@@ -34,7 +33,8 @@ before_script:
     - (cd tests/Application && bin/console doctrine:database:create --env=test -vvv)
     - (cd tests/Application && bin/console doctrine:schema:create --env=test -vvv)
     - (cd tests/Application && bin/console assets:install web --env=test -vvv)
-    - (cd tests/Application && yarn build)
+    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle && npm install gulp)
+    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/tests/Application && yarn build)
 
 
     # Configure display
