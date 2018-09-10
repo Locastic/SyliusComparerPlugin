@@ -25,14 +25,17 @@ before_install:
     - mkdir -p "${SYLIUS_CACHE_DIR}"
 
 install:
+    - composer require "symfony/symfony:3.4.*" --no-interaction --no-update
     - composer install --no-interaction --prefer-dist
     - (cd tests/Application && yarn install)
 
 before_script:
+    - (cd tests/Application && chmod +x bin/console)
     - (cd tests/Application && bin/console doctrine:database:create --env=test -vvv)
     - (cd tests/Application && bin/console doctrine:schema:create --env=test -vvv)
     - (cd tests/Application && bin/console assets:install web --env=test -vvv)
     - (cd tests/Application && yarn build)
+
 
     # Configure display
     - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1680x1050x16
