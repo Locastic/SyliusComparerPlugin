@@ -4,6 +4,7 @@
 !/var/.gitkeep
 
 /web/*
+
 !/web/assets/.gitkeep
 !/web/bundles/.gitkeep
 !/web/media/image/.gitkeep
