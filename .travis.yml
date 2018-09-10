@@ -30,9 +30,9 @@ before_install:
 install:
     - composer require "symfony/symfony:${SYMFONY_VERSION}" --no-interaction --no-update
     - composer install --no-interaction --prefer-dist
+    - (cd tests/Application && npm i --save-dev gulp)
     - (cd tests/Application && yarn install)
-    - (cd tests/Application && npm install)
-    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle)
+#    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle && npm i gulp)
 
 before_script:
     - (cd tests/Application && chmod +x bin/console)
