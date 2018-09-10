@@ -40,7 +40,7 @@ install:
     - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev gulp-uglify)
     - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev gulp-uglifycss)
     - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev yargs)
-    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle && npm i gulp)
+    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle && npm i --save-dev gulp)
 
 before_script:
     - (cd tests/Application && chmod +x bin/console)
