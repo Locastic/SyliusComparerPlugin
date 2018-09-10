@@ -31,15 +31,7 @@ install:
     - composer require "symfony/symfony:${SYMFONY_VERSION}" --no-interaction --no-update
     - composer install --no-interaction --prefer-dist
     - (cd tests/Application && yarn install)
-    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev gulp-concat)
-    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev gulp-if)
-    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev gulp-livereload)
-    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev gulp-order)
-    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev gulp-sass)
-    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev gulp-sourcemaps)
-    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev gulp-uglify)
-    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev gulp-uglifycss)
-    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev yargs)
+    - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle && npm i --save-dev gulp)
     - (cd /home/travis/build/Locastic/SyliusComparerPlugin/vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle && npm i --save-dev gulp)
 
 before_script:
