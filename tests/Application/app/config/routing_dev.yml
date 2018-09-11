@@ -1,7 +1,6 @@
 sylius:
-    resource: "../../../../vendor/sylius/sylius/app/config/routing.yml"
+    resource: "../../../../vendor/sylius/sylius/app/config/routing_dev.yml"
 
-# Put your own routes here
 locastic_sylius_comparer_plugin:
     resource: "@LocasticSyliusComparerPlugin/Resources/config/routing.yml"
     prefix: /{_locale}
